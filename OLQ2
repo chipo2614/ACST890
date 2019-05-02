@@ -1,0 +1,27 @@
+#Question 1 a)
+#curl command
+curl -o structure.pdb https://www.staff.hs-mittweida.de/~wuenschi/doku.php?id=rwbook2
+#sed command
+sed -n 's/Beisel/Weisel/p' structure.pdb
+
+#Question 1 b)
+sed '1,3d' structure.pdb
+
+#Question 1 c)
+sed -n '5,10p' structure.pdb
+
+#Question 1 d)
+sed '/MET/d' structure.pdb
+
+#Question 1 e)
+sed -n '/HELIX/p' structure.pdb | sed -n '/ILE/p'
+
+#Question 1 f)
+sed '/^H/a *** ' structure.pdb
+
+#Question 1 g)
+sed '/SEQRES/c\ SEQ' structure.pdb
+
+#Question 1 h)
+curl -o jabberwocky.txt https://ilearn.mq.edu.au/course/view.php?id=34853
+sed '/^$/d' jabberwocky.txt
